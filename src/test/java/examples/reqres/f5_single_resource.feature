@@ -4,7 +4,7 @@ Feature:Single Resource Functionality
     Given url "https://reqres.in/"
 
 
-  Scenario Outline: Verify page, per_page, total, total_pages
+  Scenario Outline: Verify the name,year of users with following ids 1,2,3,4
     Given path "api/unknown"
     Given path id = "<id>"
     When method get

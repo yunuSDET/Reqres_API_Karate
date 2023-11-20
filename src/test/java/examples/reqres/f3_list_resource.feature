@@ -42,3 +42,14 @@ Feature: List Resource Functionality
 
 
 
+  Scenario: Verify the year of second element of data is 2001
+    Given path "api/unknown"
+    When method get
+    Then status 200
+    * def year = response.data[1].year;
+    * assert year == 2001
+
+
+
+
+
