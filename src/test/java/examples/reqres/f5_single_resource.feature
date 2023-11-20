@@ -20,6 +20,7 @@ Feature:Single Resource Functionality
       | 4  | aqua sky     | 2003 |
 
 
+
   Scenario: Verify that if the url of support is working
     Given path "api/unknown"
     Given path "2"
@@ -32,9 +33,11 @@ Feature:Single Resource Functionality
 
 
 
-  Scenario: Verify that single resource with invalid id gives the 404 statuscode and response is {}
+  Scenario: Verify that single resource with invalid id gives the 404 status code and response is {}
     Given path "api/unknown"
     Given path "250"
     When method get
     Then status 404
     * match response == {}
+
+

@@ -6,7 +6,7 @@ class Runner {
     
     @Karate.Test
     Karate testUsers() {
-        return Karate.run("f3_list_resource").tags().relativeTo(getClass());
+        return Karate.run().tags().relativeTo(getClass());
     }    
 
 }
