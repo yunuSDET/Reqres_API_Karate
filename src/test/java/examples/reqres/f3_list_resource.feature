@@ -51,5 +51,21 @@ Feature: List Resource Functionality
 
 
 
+  Scenario: Verify the value of text in support is "To keep ReqRes free, contributions towards server costs are appreciated!"
+    Given path "api/unknown"
+    When method get
+    Then status 200
+    * def testInSupport = response.support.text
+    * assert testInSupport == "To keep ReqRes free, contributions towards server costs are appreciated!"
+
+
+  Scenario: Verify that each element of response is not null
+    Given path "api/unknown"
+    When method get
+    Then status 200
+    * match each response.data !=null
+
+
+
 
 
