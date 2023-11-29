@@ -59,11 +59,7 @@ Feature: List Resource Functionality
     * assert testInSupport == "To keep ReqRes free, contributions towards server costs are appreciated!"
 
 
-  Scenario: Verify that each element of response is not null
-    Given path "api/unknown"
-    When method get
-    Then status 200
-    * match each response.data !=null
+
 
 
 

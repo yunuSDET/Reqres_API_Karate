@@ -39,7 +39,6 @@ Feature:
     And request person
     When method put
     Then status 200
-    * print response
     * match response.name == person.name
     * match response.job == person.job
 

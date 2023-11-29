@@ -1,3 +1,4 @@
+
 Feature:Register functionality
 
   Background:
@@ -10,7 +11,7 @@ Feature:Register functionality
     And request credentials
     When method post
     Then status 200
-    * assert response.token != null
+    * match response.token != null
 
 
   Scenario Outline: Register 4 different users with given emails and passwords and verify if tokens are not null
@@ -19,7 +20,7 @@ Feature:Register functionality
     And request credentials
     When method post
     Then status 200
-    * assert response.token != null
+    * match response.token != null
 
     Examples:
       | email                      | password |
@@ -35,7 +36,7 @@ Feature:Register functionality
     And request credentials
     When method post
     Then status 400
-    * assert response.error == "Missing password"
+    * match response.error == "Missing password"
 
 
   Scenario Outline: Try to register 4 different users with given emails and verify that  error message is "Missing password" for each of them
@@ -44,7 +45,7 @@ Feature:Register functionality
     And request credentials
     When method post
     Then status 400
-    * assert response.error == "Missing password"
+    * match response.error == "Missing password"
 
     Examples:
       | email                      |
@@ -62,7 +63,7 @@ Feature:Register functionality
     And request credentials
     When method post
     Then status 200
-    * assert response.token != null
+    * match response.token != null
 
 
 
@@ -72,7 +73,7 @@ Feature:Register functionality
     And request credentials
     When method post
     Then status 200
-    * assert response.token != null
+    * match response.token != null
 
     Examples:
       | email                      | password |
@@ -90,7 +91,8 @@ Feature:Register functionality
     And request credentials
     When method post
     Then status 400
-    * assert response.error == "Missing password"
+    * match response.error == "Missing password"
+
 
 
   Scenario Outline: Try to login as 4 different users with given emails and verify that  error message is "Missing password" for each of them
@@ -99,7 +101,7 @@ Feature:Register functionality
     And request credentials
     When method post
     Then status 400
-    * assert response.error == "Missing password"
+    * match response.error == "Missing password"
 
     Examples:
       | email                      |
